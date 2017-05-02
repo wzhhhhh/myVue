@@ -2,11 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="referrer" content="never">
         <title></title>
     </head>
     <body>
-    	<div id="root"></div>
-      <script src='./libs/vue.js'></script>
+    	<div id="root">
+        <input @keyup.enter="addToList(text)" v-model="text" type="text">
+        <ul>
+          <li v-for="(item,index) in lis">
+            <span>{{item}}</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <button @click="lis.splice(index, 1)">delete</button>
+          </li>
+        </ul> 
+      </div>
     </body>
 </html>

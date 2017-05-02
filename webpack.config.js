@@ -125,10 +125,15 @@ module.exports = {
       }
     })
   ],
-
+  //开发环境
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.common.js'
+    }
+  },
   // 组件抽离
   externals: {
-    'vue': 'window.Vue',
+    // 'vue': 'window.Vue',
     'jQuery': 'window.jQuery'
   }
 }
